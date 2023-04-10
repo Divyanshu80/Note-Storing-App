@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect('mongodb+srv://div_123:7qrUgIJ3o8dvK1Cl@cluster0.zdnqekq.mongodb.net/?retryWrites=true&w=majority', {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true,
