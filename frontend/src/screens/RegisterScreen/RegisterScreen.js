@@ -37,7 +37,7 @@ function RegisterScreen({ history }) {
       data.append("file", pics);
       data.append("upload_preset", "Note_Storing_App");
       data.append("cloud_name", `${process.env.CLOUD_NAME}`);
-      fetch("https://api.cloudinary.com/v1_1/dzulrtqzy/image/upload", {
+      fetch(process.env.CLOUD_URI, {
         method: "post",
         body: data,
       })
